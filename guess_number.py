@@ -15,3 +15,21 @@ while validar == True: 						# empieza el ciclo while que servira para ejecutar 
 	while True:
 	    try:
 	    	firstNum = int(input("Write the first number "))	#asking the first number to the user to make the range
+	    	break
+	    except ValueError:
+	        print("Oops!  That was no valid number.  Try again...")
+	while True:
+	    try:
+	    	secondNum = int(input("Write the second number "))	#asking the second number to the user to make the range
+	    	break
+	    except ValueError:
+	        print("Oops!  That was no valid number.  Try again...")
+	if(firstNum>secondNum):
+		num = numeroAleatorio(secondNum, firstNum)
+		numMay = firstNum
+		numMen = secondNum
+	elif(firstNum<secondNum):
+		num = numeroAleatorio(firstNum, secondNum)
+		numMay = secondNum
+		numMen = firstNum
+	print("The range is " + str(numMen) + " - " + str(numMay)) 	#printing the range
