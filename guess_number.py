@@ -33,3 +33,36 @@ while validar == True: 						# empieza el ciclo while que servira para ejecutar 
 		numMay = secondNum
 		numMen = firstNum
 	print("The range is " + str(numMen) + " - " + str(numMay)) 	#printing the range
+
+	print("You have 10 tries to guess the number")
+	while True:
+		try:
+			dato = int(input("Write a number between " + str(numMen) + " and " + str(numMay) + " ")) 	
+			break
+		except ValueError:
+			print("Oops!  That was no valid number.  Try again...")		# lee el primer intento del usuario para adivinar el numero
+	if num != dato:											# valida si el numero ingresado es diferente al generado de manera aleatoria para continuar
+		while cont!=10:											# while para ejecutar el juego hasta que se acaben los intentos permitidos
+			if dato>num: 									# valida si el numero es menor que el generado por el juego
+				print("To high, you have " + str(10-cont) + " tries\n") 
+				while True:
+					try:
+						dato = int(input("Write a number between " + str(numMen) + " and " + str(numMay) + " ")) 	#lee el nuevo intento del usuario
+						break
+					except ValueError:
+						print("Oops!  That was no valid number.  Try again...")		# lee el primer intento del usuario para adivinar el numero
+				cont = cont+1 									# aumenta el contador de intentos
+			elif dato<num: 									# valida si el numero es mayor al generado por el juego
+				print("To low, you have " + str(10-cont) + " tries\n") 
+				while True:
+					try:
+						dato = int(input("Write a number between " + str(numMen) + " and " + str(numMay) + " ")) 	#lee el nuevo intento del usuario
+						break
+					except ValueError:
+						print("Oops!  That was no valid number.  Try again...")		# lee el primer intento del usuario para adivinar el numero
+				cont = cont+1 					# aumenta el contador de intentos
+			elif num == dato: 				# valida si el usuario adivino el numero
+				print("Congratulations! You guess the number " + str(dato) + "!!!")
+				cont = (100-(cont*10))
+				print("Excelent " + name +", you got " + str(cont) + " points")
+				cont = 10 										# lleva el contador al tope para terminar el juego
