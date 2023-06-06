@@ -66,3 +66,10 @@ while validar == True: 						# empieza el ciclo while que servira para ejecutar 
 				cont = (100-(cont*10))
 				print("Excelent " + name +", you got " + str(cont) + " points")
 				cont = 10 										# lleva el contador al tope para terminar el juego
+	if cont==10 and num!=dato:		
+		print("You don't have more tries, the number is: " + str(num))
+	sino = input("Do you want to play again? y/n") 		# lee la respuesta del usuario si queire jugar nuevamente
+	if sino != "y":			# valida la respuesta del usuario
+		validar = False
+	cont = 1											#reinicia el contador
+print("\nThank u for playing " + name)
