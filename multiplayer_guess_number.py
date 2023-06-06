@@ -8,3 +8,7 @@ while True: #"While" loops to chose a number
     else:
         print ("The number is out of range")#Invalid number
 plyt = input("Your name?: ") #Name of player two
+
+score = 100  # Starting score for player 2
+while score > 0:
+    guess = int(input(plyt+", try to guess the number: "))
